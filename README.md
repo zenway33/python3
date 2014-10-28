@@ -1,6 +1,6 @@
 # dghubble/python3
 
-[dghubble/python3](https://registry.hub.docker.com/u/dghubble/python3/) is a Docker image providing Python 3.2, [pip](https://packages.debian.org/wheezy/python3-pip), [distribute](https://pypi.python.org/pypi/distribute/0.7.3), and [python3-dev](https://packages.debian.org/wheezy/python3-dev) on [Debian](https://www.debian.org/releases/) Wheezy 7.6 (stable).
+[dghubble/python3](https://registry.hub.docker.com/u/dghubble/python3/) is a Docker image providing Python 3.2, [pip](https://packages.debian.org/wheezy/python3-pip), [distribute](https://pypi.python.org/pypi/distribute/0.7.3), and [python3-dev](https://packages.debian.org/wheezy/python3-dev) on [Debian](https://www.debian.org/releases/) Wheezy 7.7 (stable).
 
 ## Features
 
@@ -16,7 +16,7 @@ From [PyPI](https://pypi.python.org/pypi):
 
 ## Size
 
-209.2MB
+183.4MB
 
 ## Build
 
