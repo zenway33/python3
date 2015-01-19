@@ -27,3 +27,7 @@ From [PyPI](https://pypi.python.org/pypi):
 
     docker run -t -i dghubble/python3
 
+## License
+
+[MIT License](LICENSE)
+
