@@ -11,7 +11,7 @@ From from Debian [stable](https://packages.debian.org/stable/):
 
 From [PyPI](https://pypi.python.org/pypi):
 
-  * pip 1.5.6
+  * pip 6.0.6
   * distribute 0.7.3
 
 ## Size
