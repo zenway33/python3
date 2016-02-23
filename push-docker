@@ -1,0 +1,11 @@
+#!/bin/bash -e
+
+REPO=dghubble/python3
+QUAY_REPO=quay.io/dghubble/python3
+GIT_SHA=$(./git-version)
+
+# quay.io
+docker tag -f $REPO:$GIT_SHA $QUAY_REPO:latest
+docker tag $REPO:$GIT_SHA $QUAY_REPO:$GIT_SHA
+docker push $QUAY_REPO:latest
+docker push $QUAY_REPO:$GIT_SHA

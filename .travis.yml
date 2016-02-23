@@ -1,0 +1,15 @@
+language: python
+sudo: required
+services:
+  - docker
+script:
+  - true
+deploy:
+  provider: script
+  script: "./push-travis"
+  skip_cleanup: true
+  on:
+    branch: master
+    condition: "$TRAVIS_PULL_REQUEST = false"
+notifications:
+  email: false

@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+docker info
+./build-docker
+docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p=$DOCKER_PASSWORD quay.io
+./push-docker
