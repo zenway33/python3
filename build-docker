@@ -1,0 +1,7 @@
+#!/bin/bash -e
+
+REPO=dghubble/python3
+GIT_SHA=$(./git-version)
+
+docker build -q --rm=true -t $REPO:$GIT_SHA .
+docker tag -f $REPO:$GIT_SHA $REPO:latest

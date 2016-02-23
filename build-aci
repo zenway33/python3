@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -e
+
+GIT_SHA=$(./git-version)
+
+acbuild --debug begin
+
+# In the event of the script exiting, end the build
+trap "{ export EXT=$?; acbuild --debug end && exit $EXT; }" EXIT
+
+acbuild --debug set-name dghubble.io/python3
+
+acbuild --debug label add version $GIT_SHA
+
+acbuild --debug dep add quay.io/coreos/alpine-sh
+
+acbuild --debug run -- apk --no-cache --update add python3 python3-dev ca-certificates
+acbuild --debug run -- python3 -m ensurepip
+acbuild --debug run -- pip3 install --upgrade pip
+
+acbuild --debug set-exec -- /bin/ash
+
+acbuild --debug write --overwrite python3.aci

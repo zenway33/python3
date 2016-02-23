@@ -1,29 +1,51 @@
-# dghubble/python3
+# python3
 
-[dghubble/python3](https://registry.hub.docker.com/u/dghubble/python3/) is a Docker image providing Python 3.4, [pip](https://packages.debian.org/wheezy/python3-pip), [distribute](https://pypi.python.org/pypi/distribute/0.7.3), and [python3-dev](https://packages.debian.org/wheezy/python3-dev) on [Debian](https://www.debian.org/releases/) Jessie 8.0 (stable).
+A `python3` Application Container Image (ACI) on Alpine. Also includes a Docker image.
 
-## Features
+## Includes
 
-From from Debian [stable](https://packages.debian.org/stable/):
-
-  * Python 3.4.2
+  * Python 3.4.3 (3.5.1 on Docker's alpine)
   * python3-dev
+  * pip3 8.0.2
 
-From [PyPI](https://pypi.python.org/pypi):
+## Usage
 
-  * pip3 1.5.6
-  * distribute 0.7.3
+Pull the published ACI from Quay.
 
-## Build
+    sudo rkt --insecure-options=image fetch docker://quay.io/dghubble/python3
 
-    cd dghubble-docker/python3
-    docker build -t dghubble/python3:v1 .
+Run the ACI in a pod with rkt.
 
-## Start
+    sudo rkt --insecure-options=image run --interactive quay.io/dghubble/python3 
 
-    docker run -t -i dghubble/python3
+Alternately, Docker can be used.
 
-## License
+    sudo docker pull quay.io/dghubble/python3:latest
+    sudo docker run -t -i dghubble/python3
 
-[MIT License](LICENSE)
+## Development
+
+An image can be modified, built, and run locally.
+
+### Container Image
+
+Build an ACI.
+
+    sudo ./build-aci
+
+Alternately, build a Docker image.
+
+    sudo docker build --rm=true -t dghubble/python3 .
+
+### Run
+
+Run the ACI with rkt.
+
+    sudo rkt --insecure-options=image run --interactive python3.aci
+
+Alternately, run the Docker image.
+
+    sudo docker run -t -i dghubble/python3
+
+
 
